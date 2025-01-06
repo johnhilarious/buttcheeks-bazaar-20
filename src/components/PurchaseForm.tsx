@@ -18,17 +18,31 @@ export const PurchaseForm = () => {
   useEffect(() => {
     const fetchTokenInfo = async () => {
       try {
-        const response = await fetch(`https://public-api.solscan.io/token/meta?tokenAddress=${CONTRACT_ADDRESS}`);
+        const response = await fetch(`https://api.solscan.io/v2/token/meta?token_address=${CONTRACT_ADDRESS}`, {
+          headers: {
+            'Accept': 'application/json',
+            'User-Agent': 'Mozilla/5.0',
+          }
+        });
+        
+        if (!response.ok) {
+          throw new Error(`API request failed with status ${response.status}`);
+        }
+        
         const data = await response.json();
-        setTokenInfo(data);
+        setTokenInfo(data.data);
         console.log("Token info:", data);
       } catch (error) {
         console.error("Error fetching token info:", error);
+        toast({
+          title: "Notice",
+          description: "Token information temporarily unavailable",
+        });
       }
     };
 
     fetchTokenInfo();
-  }, []);
+  }, [toast]);
 
   const handleBuy = (e: React.MouseEvent) => {
     e.preventDefault();
