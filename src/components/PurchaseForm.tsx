@@ -18,19 +18,18 @@ export const PurchaseForm = () => {
   useEffect(() => {
     const fetchTokenInfo = async () => {
       try {
-        const response = await fetch(`https://api.solscan.io/v2/token/meta?token_address=${CONTRACT_ADDRESS}`, {
-          headers: {
-            'Accept': 'application/json',
-            'User-Agent': 'Mozilla/5.0',
-          }
-        });
+        const response = await fetch(`https://price.jup.ag/v4/token/${CONTRACT_ADDRESS}`);
         
         if (!response.ok) {
           throw new Error(`API request failed with status ${response.status}`);
         }
         
         const data = await response.json();
-        setTokenInfo(data.data);
+        setTokenInfo({
+          symbol: data.data?.symbol || 'N/A',
+          price: data.data?.price || 'N/A',
+          volume24h: data.data?.volume24h || 'N/A'
+        });
         console.log("Token info:", data);
       } catch (error) {
         console.error("Error fetching token info:", error);
@@ -107,9 +106,9 @@ export const PurchaseForm = () => {
           <div className="pt-4 border-t border-white/10 mt-4 text-sm text-gray-400">
             <p className="mb-2">Token Information:</p>
             <div className="bg-black/30 p-3 rounded text-xs">
-              <p>Symbol: {tokenInfo.symbol || 'N/A'}</p>
-              <p>Decimals: {tokenInfo.decimals || 'N/A'}</p>
-              <p>Supply: {tokenInfo.supply || 'N/A'}</p>
+              <p>Symbol: {tokenInfo.symbol}</p>
+              <p>Price: ${Number(tokenInfo.price).toFixed(8)}</p>
+              <p>24h Volume: ${Number(tokenInfo.volume24h).toFixed(2)}</p>
             </div>
           </div>
         )}
