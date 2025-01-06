@@ -33,11 +33,19 @@
   }
   body {
     @apply bg-dark-primary text-foreground;
-    background-image: radial-gradient(
-      circle at center,
-      rgba(26, 31, 44, 0.8) 0%,
-      rgba(26, 31, 44, 1) 100%
+    background: linear-gradient(
+      135deg,
+      rgba(26, 31, 44, 1) 0%,
+      rgba(26, 31, 44, 0.95) 100%
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(26, 31, 44, 0.1) 0px,
+      rgba(26, 31, 44, 0.1) 1px,
+      transparent 1px,
+      transparent 50px
     );
+    background-attachment: fixed;
   }
 }
 

@@ -1,10 +1,28 @@
 import { PriceCard } from "@/components/PriceCard";
 import { PurchaseForm } from "@/components/PurchaseForm";
 import { Stats } from "@/components/Stats";
+import { useEffect, useState } from "react";
 
 const Index = () => {
+  const [displayText, setDisplayText] = useState("");
+  const fullText = "A revolutionary meme coin that's taking the crypto world by storm. Built on cutting-edge blockchain technology, ButtCheeks represents the perfect fusion of humor and serious gains. Join the movement and become part of the most cheeky community in crypto.";
+  
+  useEffect(() => {
+    let currentIndex = 0;
+    const typingInterval = setInterval(() => {
+      if (currentIndex <= fullText.length) {
+        setDisplayText(fullText.slice(0, currentIndex));
+        currentIndex++;
+      } else {
+        clearInterval(typingInterval);
+      }
+    }, 50);
+
+    return () => clearInterval(typingInterval);
+  }, []);
+
   return (
-    <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 bg-dark-primary">
       <div className="max-w-7xl mx-auto space-y-12">
         {/* Hero Section */}
         <div className="text-center space-y-4">
@@ -14,9 +32,12 @@ const Index = () => {
           <h1 className="text-4xl sm:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-dark-accent">
             ButtCheeks Coin
           </h1>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            The most cheeky cryptocurrency in the market. Don't just sit there, grab some ButtCheeks!
-          </p>
+          <div className="relative">
+            <p className="text-green-400 font-mono text-sm sm:text-base max-w-2xl mx-auto h-20 sm:h-16 overflow-hidden">
+              {displayText}
+              <span className="animate-pulse">_</span>
+            </p>
+          </div>
         </div>
 
         {/* Price Section */}
