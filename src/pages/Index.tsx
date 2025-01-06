@@ -3,8 +3,7 @@ import { MessageCircle, Twitter } from "lucide-react";
 
 const Index = () => {
   const [displayText, setDisplayText] = useState("");
-  const fullText = "First there was $FART a pioneer, Then came the lonely $HOLE. A hole doesn't get its fart without its buttcheeks!  Now, ButtCheeks completes the Holy Trinity of crypto. Built on cutting-edge blockchain technology, ButtCheeks represents the perfect fusion of humor and scientific gains. Join the movement and become part of the most cheeky community in crypto.";
-  // const fullText = "First there was $FART, the pioneer of meme coins. Then came $HOLE, pushing boundaries further. But what is a butt without its cheeks? Now, ButtCheeks completes the Holy Trinity of crypto. Built on cutting-edge blockchain technology, ButtCheeks represents the perfect fusion of humor and serious gains. Join the movement and become part of the most cheeky community in crypto.";
+  const fullText = "First there was $FART a pioneer, Then came $HOLE, pushing boundaries further. But you don't get a hole doesn't get its fart without its buttcheeks!  Now, ButtCheeks completes the Holy Trinity of crypto. Built on cutting-edge blockchain technology, ButtCheeks represents the perfect fusion of humor and serious gains. Join the movement and become part of the most cheeky community in crypto.";
   const CONTRACT_ADDRESS = "55lcyqsa4zb1md3soq6bejrpfxchmv3dwps5blxgcjpd";
   
   useEffect(() => {
@@ -102,13 +101,21 @@ const Index = () => {
             </a>
           </div>
 
+          {/* Coming Soon Announcement */}
+          <div className="text-center animate-pulse">
+            <div className="inline-block bg-gradient-to-r from-dark-accent/20 to-dark-accent/10 rounded-lg px-6 py-3">
+              <span className="text-dark-accent font-bold">🏆 Coming Tomorrow:</span>
+              <span className="text-white ml-2">ButtCheeks Leaderboard - Who's Got The Cheekiest of them all?</span>
+            </div>
+          </div>
+
           {/* Contract Address */}
           <div className="text-center">
             <p className="text-gray-400 text-sm">
               Contract Address: <span className="font-mono">{CONTRACT_ADDRESS}</span>
             </p>
-          </div>
-        </div>
+      </div>
+    </div>
       </div>
     </div>
   );
