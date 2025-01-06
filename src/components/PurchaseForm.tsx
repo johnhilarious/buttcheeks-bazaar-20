@@ -1,67 +1,25 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
-import { ExternalLink, MessageCircle, Twitter } from "lucide-react";
 
 export const PurchaseForm = () => {
   const [amount, setAmount] = useState("");
-  const [tokenInfo, setTokenInfo] = useState<any>(null);
   const { toast } = useToast();
 
-  const CONTRACT_ADDRESS = "55lcyqsa4zb1md3soq6bejrpfxchmv3dwps5blxgcjpd";
-  const DEXSCREENER_URL = `https://dexscreener.com/solana/${CONTRACT_ADDRESS}`;
-  const TELEGRAM_URL = "https://t.me/buttcheekscoinsol";
-  const TWITTER_URL = "https://x.com/buttcheekscoin";
-
-  useEffect(() => {
-    const fetchTokenInfo = async () => {
-      try {
-        const response = await fetch(`https://price.jup.ag/v4/token/${CONTRACT_ADDRESS}`);
-        
-        if (!response.ok) {
-          throw new Error(`API request failed with status ${response.status}`);
-        }
-        
-        const data = await response.json();
-        setTokenInfo({
-          symbol: data.data?.symbol || 'N/A',
-          price: data.data?.price || 'N/A',
-          volume24h: data.data?.volume24h || 'N/A'
-        });
-        console.log("Token info:", data);
-      } catch (error) {
-        console.error("Error fetching token info:", error);
-        toast({
-          title: "Notice",
-          description: "Token information temporarily unavailable",
-        });
-      }
-    };
-
-    fetchTokenInfo();
-  }, [toast]);
-
-  const handleBuy = (e: React.MouseEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    window.open(DEXSCREENER_URL, '_blank');
     toast({
-      title: "Redirecting to DEXScreener",
-      description: "You will be redirected to purchase ButtCheeks tokens...",
+      title: "Purchase Initiated",
+      description: `Purchasing ${amount} ButtCheeks tokens...`,
     });
   };
 
   return (
     <Card className="glass p-6 w-full max-w-md">
       <h3 className="text-xl font-bold mb-4 text-center">Buy ButtCheeks</h3>
-      
-      <div className="mb-6 text-sm text-gray-400 break-all">
-        <p className="mb-2">Contract Address:</p>
-        <code className="bg-black/30 p-2 rounded text-xs">{CONTRACT_ADDRESS}</code>
-      </div>
-
-      <form className="space-y-4">
+      <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label className="text-sm text-gray-400">Amount (USD)</label>
           <Input
@@ -73,45 +31,11 @@ export const PurchaseForm = () => {
           />
         </div>
         <Button
-          onClick={handleBuy}
-          className="w-full bg-dark-accent hover:bg-dark-accent/90 transition-all duration-300 transform hover:scale-[1.02] flex items-center justify-center gap-2"
+          type="submit"
+          className="w-full bg-dark-accent hover:bg-dark-accent/90 transition-all duration-300 transform hover:scale-[1.02]"
         >
-          Buy on DEXScreener
-          <ExternalLink className="w-4 h-4" />
+          Purchase Now
         </Button>
-
-        <div className="pt-4 border-t border-white/10 mt-4">
-          <p className="text-sm text-gray-400 mb-3">Join our community:</p>
-          <div className="flex gap-3 justify-center">
-            <Button
-              variant="outline"
-              size="icon"
-              className="hover:bg-white/10"
-              onClick={() => window.open(TELEGRAM_URL, '_blank')}
-            >
-              <MessageCircle className="w-4 h-4" />
-            </Button>
-            <Button
-              variant="outline"
-              size="icon"
-              className="hover:bg-white/10"
-              onClick={() => window.open(TWITTER_URL, '_blank')}
-            >
-              <Twitter className="w-4 h-4" />
-            </Button>
-          </div>
-        </div>
-
-        {tokenInfo && (
-          <div className="pt-4 border-t border-white/10 mt-4 text-sm text-gray-400">
-            <p className="mb-2">Token Information:</p>
-            <div className="bg-black/30 p-3 rounded text-xs">
-              <p>Symbol: {tokenInfo.symbol}</p>
-              <p>Price: ${Number(tokenInfo.price).toFixed(8)}</p>
-              <p>24h Volume: ${Number(tokenInfo.volume24h).toFixed(2)}</p>
-            </div>
-          </div>
-        )}
       </form>
     </Card>
   );
