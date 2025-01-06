@@ -59,17 +59,39 @@ const Index = () => {
             </p>
           </div>
 
-          {/* Buy Button */}
-          <div className="space-y-1">
+          {/* Social Links and Buy Button Row */}
+          <div className="flex justify-center items-center gap-8 pt-4">
             <a
-              href={`https://dexscreener.com/solana/${CONTRACT_ADDRESS}`}
+              href="https://t.me/buttcheekscoinsol"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-dark-accent hover:bg-dark-accent/90 text-white font-bold py-4 px-8 rounded-lg text-xl transition-all duration-300 transform hover:scale-[1.02]"
+              className="flex items-center gap-3 text-white hover:text-dark-accent transition-colors text-xl animate-float"
             >
-              Buy Now
+              <MessageCircle className="w-8 h-8" />
+              <span>Join Telegram</span>
             </a>
-            <div className="text-sm text-gray-500">(dexscreener)</div>
+            
+            <div className="space-y-1 animate-float">
+              <a
+                href={`https://dexscreener.com/solana/${CONTRACT_ADDRESS}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-dark-accent hover:bg-dark-accent/90 text-white font-bold py-4 px-8 rounded-lg text-xl transition-all duration-300 transform hover:scale-[1.02]"
+              >
+                Buy Now
+              </a>
+              <div className="text-sm text-gray-500">(dexscreener)</div>
+            </div>
+
+            <a
+              href="https://x.com/buttcheekscoin"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 text-white hover:text-dark-accent transition-colors text-xl animate-float"
+            >
+              <Twitter className="w-8 h-8" />
+              <span>Follow Twitter</span>
+            </a>
           </div>
 
           {/* Contract Address */}
@@ -77,28 +99,6 @@ const Index = () => {
             <p className="text-gray-400 text-sm">
               Contract Address: <span className="font-mono">{CONTRACT_ADDRESS}</span>
             </p>
-          </div>
-
-          {/* Social Links */}
-          <div className="flex justify-center gap-8 pt-4">
-            <a
-              href="https://t.me/buttcheekscoinsol"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 text-white hover:text-dark-accent transition-colors text-xl"
-            >
-              <MessageCircle className="w-8 h-8" />
-              <span>Join Telegram</span>
-            </a>
-            <a
-              href="https://x.com/buttcheekscoin"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 text-white hover:text-dark-accent transition-colors text-xl"
-            >
-              <Twitter className="w-8 h-8" />
-              <span>Follow Twitter</span>
-            </a>
           </div>
         </div>
       </div>
