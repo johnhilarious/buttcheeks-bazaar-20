@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 const Index = () => {
   const [displayText, setDisplayText] = useState("");
-  const fullText = "A revolutionary meme coin that's taking the crypto world by storm. Built on cutting-edge blockchain technology, ButtCheeks represents the perfect fusion of humor and serious gains. Join the movement and become part of the most cheeky community in crypto.";
+  const fullText = "First there was $FART, the pioneer of meme coins. Then came $HOLE, pushing boundaries further. But what is a butt without its cheeks? Now, ButtCheeks completes the Holy Trinity of crypto. Built on cutting-edge blockchain technology, ButtCheeks represents the perfect fusion of humor and serious gains. Join the movement and become part of the most cheeky community in crypto.";
   
   useEffect(() => {
     let currentIndex = 0;
@@ -22,7 +22,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 bg-dark-primary">
+    <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 bg-black">
       <div className="max-w-7xl mx-auto space-y-12">
         {/* Hero Section */}
         <div className="text-center space-y-4">
@@ -33,7 +33,7 @@ const Index = () => {
             ButtCheeks Coin
           </h1>
           <div className="relative">
-            <p className="text-green-400 font-mono text-sm sm:text-base max-w-2xl mx-auto h-20 sm:h-16 overflow-hidden">
+            <p className="text-green-400 font-mono text-sm sm:text-base max-w-2xl mx-auto h-32 sm:h-28 overflow-hidden">
               {displayText}
               <span className="animate-pulse">_</span>
             </p>

@@ -32,16 +32,16 @@
     @apply border-border;
   }
   body {
-    @apply bg-dark-primary text-foreground;
+    @apply bg-black text-foreground;
     background: linear-gradient(
       135deg,
-      rgba(26, 31, 44, 1) 0%,
-      rgba(26, 31, 44, 0.95) 100%
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.95) 100%
     ),
     repeating-linear-gradient(
       0deg,
-      rgba(26, 31, 44, 0.1) 0px,
-      rgba(26, 31, 44, 0.1) 1px,
+      rgba(255, 255, 255, 0.03) 0px,
+      rgba(255, 255, 255, 0.03) 1px,
       transparent 1px,
       transparent 50px
     );
