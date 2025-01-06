@@ -20,6 +20,27 @@ const Index = () => {
     return () => clearInterval(typingInterval);
   }, []);
 
+  const renderTextWithLink = (text: string) => {
+    return text.split('ButtCheeks').map((part, index, array) => {
+      if (index < array.length - 1) {
+        return (
+          <>
+            {part}
+            <a
+              href={`https://dexscreener.com/solana/${CONTRACT_ADDRESS}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-dark-accent underline hover:text-dark-accent/80"
+            >
+              ButtCheeks
+            </a>
+          </>
+        );
+      }
+      return part;
+    });
+  };
+
   return (
     <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 bg-black">
       <div className="max-w-7xl mx-auto space-y-12">
@@ -32,21 +53,24 @@ const Index = () => {
             ButtCheeks Coin
           </h1>
           <div className="relative">
-            <p className="text-green-400 font-mono text-sm sm:text-base max-w-2xl mx-auto h-32 sm:h-28 overflow-hidden">
-              {displayText}
+            <p className="text-green-400 font-mono text-sm sm:text-base max-w-2xl mx-auto min-h-[8rem] sm:min-h-[6rem]">
+              {renderTextWithLink(displayText)}
               <span className="animate-pulse">_</span>
             </p>
           </div>
 
           {/* Buy Button */}
-          <a
-            href={`https://dexscreener.com/solana/${CONTRACT_ADDRESS}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-dark-accent hover:bg-dark-accent/90 text-white font-bold py-4 px-8 rounded-lg text-xl transition-all duration-300 transform hover:scale-[1.02]"
-          >
-            Buy Now
-          </a>
+          <div className="space-y-1">
+            <a
+              href={`https://dexscreener.com/solana/${CONTRACT_ADDRESS}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-dark-accent hover:bg-dark-accent/90 text-white font-bold py-4 px-8 rounded-lg text-xl transition-all duration-300 transform hover:scale-[1.02]"
+            >
+              Buy Now
+            </a>
+            <div className="text-sm text-gray-500">(dexscreener)</div>
+          </div>
 
           {/* Contract Address */}
           <div className="text-center">
