@@ -1,29 +1,13 @@
 import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { ExternalLink, MessageCircle, Twitter } from "lucide-react";
-import { useQuery } from "@tanstack/react-query";
 
 export const Stats = () => {
   const CONTRACT_ADDRESS = "55lcyqsa4zb1md3soq6bejrpfxchmv3dwps5blxgcjpd";
   
-  // Fetch token data from Jupiter API
-  const { data: tokenData } = useQuery({
-    queryKey: ['tokenInfo'],
-    queryFn: async () => {
-      const response = await fetch(`https://price.jup.ag/v4/price?ids=${CONTRACT_ADDRESS}`);
-      if (!response.ok) {
-        throw new Error('Failed to fetch token data');
-      }
-      return response.json();
-    }
-  });
-
   const stats = [
     { 
       label: "Market Cap", 
-      value: tokenData?.data?.[CONTRACT_ADDRESS]?.price 
-        ? `$${(Number(tokenData.data[CONTRACT_ADDRESS].price) * 1000000000).toLocaleString()}`
-        : "$420,690" 
+      value: "$420,690"
     },
     { 
       label: "Buy ButtCheeks", 
