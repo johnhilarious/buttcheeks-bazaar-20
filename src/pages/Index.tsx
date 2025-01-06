@@ -3,7 +3,8 @@ import { MessageCircle, Twitter } from "lucide-react";
 
 const Index = () => {
   const [displayText, setDisplayText] = useState("");
-  const fullText = "First there was $FART, the pioneer of meme coins. Then came $HOLE, pushing boundaries further. But what is a butt without its cheeks? Now, ButtCheeks completes the Holy Trinity of crypto. Built on cutting-edge blockchain technology, ButtCheeks represents the perfect fusion of humor and serious gains. Join the movement and become part of the most cheeky community in crypto.";
+  const fullText = "First there was $FART a pioneer, Then came the lonely $HOLE. A hole doesn't get its fart without its buttcheeks!  Now, ButtCheeks completes the Holy Trinity of crypto. Built on cutting-edge blockchain technology, ButtCheeks represents the perfect fusion of humor and scientific gains. Join the movement and become part of the most cheeky community in crypto.";
+  // const fullText = "First there was $FART, the pioneer of meme coins. Then came $HOLE, pushing boundaries further. But what is a butt without its cheeks? Now, ButtCheeks completes the Holy Trinity of crypto. Built on cutting-edge blockchain technology, ButtCheeks represents the perfect fusion of humor and serious gains. Join the movement and become part of the most cheeky community in crypto.";
   const CONTRACT_ADDRESS = "55lcyqsa4zb1md3soq6bejrpfxchmv3dwps5blxgcjpd";
   
   useEffect(() => {
@@ -49,8 +50,15 @@ const Index = () => {
           <div className="w-24 h-24 mx-auto bg-dark-accent rounded-full animate-float flex items-center justify-center">
             <span className="text-4xl">🍑</span>
           </div>
-          <h1 className="text-4xl sm:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-dark-accent">
-            ButtCheeks Coin
+          <h1 className="text-4xl sm:text-6xl font-bold flex items-center justify-center gap-3">
+            <img 
+              src="/buttcheeks.png" 
+              alt="ButtCheeks" 
+              className="h-12 sm:h-20"
+            />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-dark-accent">
+              Coin
+            </span>
           </h1>
           <div className="relative">
             <p className="text-green-400 font-mono text-sm sm:text-base max-w-2xl mx-auto min-h-[8rem] sm:min-h-[6rem]">
