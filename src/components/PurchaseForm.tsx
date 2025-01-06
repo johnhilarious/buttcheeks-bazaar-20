@@ -3,7 +3,7 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
-import { ExternalLink, Telegram, Twitter } from "lucide-react";
+import { ExternalLink, MessageCircle, Twitter } from "lucide-react";
 
 export const PurchaseForm = () => {
   const [amount, setAmount] = useState("");
@@ -76,7 +76,7 @@ export const PurchaseForm = () => {
               className="hover:bg-white/10"
               onClick={() => window.open(TELEGRAM_URL, '_blank')}
             >
-              <Telegram className="w-4 h-4" />
+              <MessageCircle className="w-4 h-4" />
             </Button>
             <Button
               variant="outline"
