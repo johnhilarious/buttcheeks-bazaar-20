@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
 
 const images = [
-  '/buttcheeks.png',
-  // We're using the same image multiple times for now
-  // These can be replaced with different GIF URLs later
-  '/buttcheeks.png',
-  '/buttcheeks.png',
+  'https://images.unsplash.com/photo-1517022812141-23620dba5c23?w=200&h=200',
+  'https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=200&h=200',
+  'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=200&h=200',
 ];
 
 type Position = {
@@ -31,8 +29,8 @@ const ShootingImages = () => {
     const endY = corner < 2 ? window.innerHeight + 100 : -100;
 
     return {
-      x: startX,
-      y: startY,
+      x: endX,
+      y: endY,
       rotation: Math.random() * 360,
       duration: 3 + Math.random() * 2, // 3-5 seconds
       delay: Math.random() * 2, // 0-2 seconds
@@ -54,6 +52,8 @@ const ShootingImages = () => {
     return () => clearInterval(interval);
   }, []);
 
+  console.log('Current elements:', elements); // Debug log
+
   return (
     <div className="fixed inset-0 pointer-events-none overflow-hidden">
       {elements.map((pos, index) => (
@@ -61,7 +61,7 @@ const ShootingImages = () => {
           key={index}
           src={images[index % images.length]}
           alt="Flying"
-          className="absolute w-16 h-16 object-contain opacity-30"
+          className="absolute w-24 h-24 object-cover rounded-full opacity-50"
           style={{
             transform: `translate(${pos.x}px, ${pos.y}px) rotate(${pos.rotation}deg) scale(${pos.scale})`,
             transition: `transform ${pos.duration}s linear ${pos.delay}s`,
