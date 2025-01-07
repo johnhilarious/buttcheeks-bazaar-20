@@ -38,7 +38,7 @@ const Index = () => {
               rel="noopener noreferrer"
               className="text-dark-accent underline hover:text-dark-accent/80"
             >
-              ButtCheeks
+              $buttcheeks
             </a>
           </React.Fragment>
         );
