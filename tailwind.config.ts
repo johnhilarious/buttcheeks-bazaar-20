@@ -63,6 +63,14 @@ export default {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-10px)" },
         },
+        float1: {
+          "0%, 100%": { transform: "translateY(-10px)" },
+          "50%": { transform: "translateY(0)" },
+        },
+        float2: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-10px)" },
+        },
         pulse: {
           "0%, 100%": { opacity: "1" },
           "50%": { opacity: "0.5" },
@@ -74,6 +82,8 @@ export default {
       },
       animation: {
         float: "float 3s ease-in-out infinite",
+        float1: "float1 4s ease-in-out infinite",
+        float2: "float2 2s ease-in-out infinite",
         pulse: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
         shimmer: "shimmer 2s linear infinite",
       },

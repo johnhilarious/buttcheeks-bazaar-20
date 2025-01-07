@@ -82,7 +82,7 @@ const Index = () => {
               <span>Join Telegram</span>
             </a>
             
-            <div className="space-y-1 animate-float">
+            <div className="space-y-1 animate-float1">
               <a
                 href={`https://dexscreener.com/solana/${CONTRACT_ADDRESS}`}
                 target="_blank"
@@ -98,7 +98,7 @@ const Index = () => {
               href="https://x.com/buttcheekscoin"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 text-white hover:text-dark-accent transition-colors text-xl animate-float"
+              className="flex items-center gap-3 text-white hover:text-dark-accent transition-colors text-xl animate-float2"
             >
               <Twitter className="w-8 h-8" />
               <span>Follow Twitter</span>
@@ -116,8 +116,8 @@ const Index = () => {
             <p className="text-gray-400 text-sm">
               Contract Address: <span className="font-mono">{CONTRACT_ADDRESS}</span>
             </p>
-      </div>
-    </div>
+          </div>
+        </div>
       </div>
     </div>
   );
