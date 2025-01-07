@@ -44,22 +44,26 @@ const ShootingImages = () => {
 
   return (
     <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
-      {elements.map((pos, index) => (
-        pos.isEmoji ? (
-          <div
-            key={index}
-            className="absolute text-6xl"
-            style={{
-              transform: `translate(${pos.x}px, ${pos.y}px) rotate(${pos.rotation}deg)`,
-              transition: 'transform 4s linear',
-            }}
-            onAnimationEnd={() => {
-              setElements(prev => prev.filter((_, i) => i !== index));
-            }}
-          >
-            {images[Math.floor(Math.random() * 2) + 3]} {/* Select randomly between the two peach emojis */}
-          </div>
-        ) : (
+      {elements.map((pos, index) => {
+        if (pos.isEmoji) {
+          return (
+            <div
+              key={index}
+              className="absolute text-6xl"
+              style={{
+                transform: `translate(${pos.x}px, ${pos.y}px) rotate(${pos.rotation}deg)`,
+                transition: 'transform 4s linear',
+              }}
+              onAnimationEnd={() => {
+                setElements(prev => prev.filter((_, i) => i !== index));
+              }}
+            >
+              {images[Math.floor(Math.random() * 2) + 3]} {/* Select randomly between the two peach emojis */}
+            </div>
+          );
+        }
+        
+        return (
           <img
             key={index}
             src={images[index % 3]} // Use only the first 3 images for non-emoji elements
@@ -79,7 +83,8 @@ const ShootingImages = () => {
               setElements(prev => prev.filter((_, i) => i !== index));
             }}
           />
-        ))}
+        );
+      })}
     </div>
   );
 };
