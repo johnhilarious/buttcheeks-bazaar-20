@@ -22,7 +22,7 @@ const Index = () => {
   }, []);
 
   const renderTextWithLink = (text: string) => {
-    return text.split('ButtCheeks').map((part, index, array) => {
+    return text.split('$buttcheeks').map((part, index, array) => {
       if (index < array.length - 1) {
         return (
           <React.Fragment key={index}>
