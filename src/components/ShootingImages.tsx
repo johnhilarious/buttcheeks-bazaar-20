@@ -1,9 +1,21 @@
 import React, { useEffect, useState } from 'react';
 
 const images = [
-  'https://images.unsplash.com/photo-1517022812141-23620dba5c23?w=200&h=200',
-  'https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=200&h=200',
-  'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=200&h=200',
+  // 'https://images.unsplash.com/photo-1517022812141-23620dba5c23?w=200&h=200',
+  // 'https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=200&h=200',
+  // 'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=200&h=200',
+  'peach.png',
+  'peach.png',
+  'peach.png',
+  'peach.png',
+  '🍑', // Adding peach emoji
+  '🍑', // Adding another peach emoji for variety
+  '🍑', // Adding peach emoji
+  '🍑', // Adding another peach emoji for variety
+  '🍑', // Adding peach emoji
+  '🍑', // Adding another peach emoji for variety
+  '🍑', // Adding peach emoji
+  '🍑', // Adding another peach emoji for variety
   '🍑', // Adding peach emoji
   '🍑', // Adding another peach emoji for variety
 ];
