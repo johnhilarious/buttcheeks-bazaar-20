@@ -13,6 +13,8 @@ type Position = {
   duration: number;
   delay: number;
   scale: number;
+  startX: number;
+  startY: number;
 };
 
 const ShootingImages = () => {
@@ -31,6 +33,8 @@ const ShootingImages = () => {
     return {
       x: endX,
       y: endY,
+      startX,
+      startY,
       rotation: Math.random() * 360,
       duration: 3 + Math.random() * 2, // 3-5 seconds
       delay: Math.random() * 2, // 0-2 seconds
@@ -55,7 +59,7 @@ const ShootingImages = () => {
   console.log('Current elements:', elements); // Debug log
 
   return (
-    <div className="fixed inset-0 pointer-events-none overflow-hidden">
+    <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
       {elements.map((pos, index) => (
         <img
           key={index}
@@ -63,11 +67,17 @@ const ShootingImages = () => {
           alt="Flying"
           className="absolute w-24 h-24 object-cover rounded-full opacity-50"
           style={{
-            transform: `translate(${pos.x}px, ${pos.y}px) rotate(${pos.rotation}deg) scale(${pos.scale})`,
+            transform: `translate(${pos.startX}px, ${pos.startY}px) rotate(${pos.rotation}deg) scale(${pos.scale})`,
             transition: `transform ${pos.duration}s linear ${pos.delay}s`,
           }}
           onTransitionEnd={() => {
             setElements(prev => prev.filter((_, i) => i !== index));
+          }}
+          onLoad={(e) => {
+            const img = e.currentTarget;
+            // Force a reflow to ensure the initial position is set before the animation
+            void img.offsetWidth;
+            img.style.transform = `translate(${pos.x}px, ${pos.y}px) rotate(${pos.rotation}deg) scale(${pos.scale})`;
           }}
         />
       ))}
