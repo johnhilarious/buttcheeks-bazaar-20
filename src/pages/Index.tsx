@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { MessageCircle, Twitter } from "lucide-react";
+import ShootingImages from "../components/ShootingImages";
 
 const Index = () => {
   const [displayText, setDisplayText] = useState("");
@@ -82,7 +83,8 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 bg-black">
+    <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 bg-black relative">
+      <ShootingImages />
       <div className="max-w-7xl mx-auto space-y-12">
         <div className="text-center space-y-8">
           <div className="w-24 h-24 mx-auto bg-dark-accent rounded-full animate-float flex items-center justify-center">
