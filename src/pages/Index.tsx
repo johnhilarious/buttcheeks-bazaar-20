@@ -3,8 +3,9 @@ import { MessageCircle, Twitter } from "lucide-react";
 
 const Index = () => {
   const [displayText, setDisplayText] = useState("");
-  const fullText = "First, there was $FART, a pioneer. Then came $butthole, pushing boundaries further. But you don't get a hole without its fart, and you don't get a fart without its buttcheeks! Now, ButtCheeks completes the Holy Trinity of crypto. Built on cutting-edge blockchain technology, ButtCheeks represents the perfect fusion of humor and serious gains. Join the movement and become part of the most cheeky community in crypto.";
+  const fullText = " ButtCheeks is here to complete the Holy Trinity of crypto.\n First, there was $FART, a pioneer. Then came $butthole, pushing boundaries further. But you don't get a hole without its fart, and you don't get a fart without its buttcheeks! Built on cutting-edge blockchain technology, ButtCheeks represents the perfect fusion of humor and serious gains. Join the movement and become part of the most cheeky community in crypto.";
   const CONTRACT_ADDRESS = "DGjXz3xPKiBKr8sLtpDJmRgYXgMDEKtiKPzHzyuXpump";
+  
   useEffect(() => {
     let currentIndex = 0;
     const typingInterval = setInterval(() => {
@@ -24,7 +25,12 @@ const Index = () => {
       if (index < array.length - 1) {
         return (
           <>
-            {part}
+            {part.split('\n').map((line, i, arr) => (
+              <>
+                {line}
+                {i < arr.length - 1 && <br />}
+              </>
+            ))}
             <a
               href={`https://dexscreener.com/solana/${CONTRACT_ADDRESS}`}
               target="_blank"
@@ -36,7 +42,12 @@ const Index = () => {
           </>
         );
       }
-      return part;
+      return part.split('\n').map((line, i, arr) => (
+        <>
+          {line}
+          {i < arr.length - 1 && <br />}
+        </>
+      ));
     });
   };
 
