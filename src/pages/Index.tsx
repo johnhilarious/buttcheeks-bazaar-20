@@ -1,9 +1,10 @@
+import React from "react";
 import { useEffect, useState } from "react";
 import { MessageCircle, Twitter } from "lucide-react";
 
 const Index = () => {
   const [displayText, setDisplayText] = useState("");
-  const fullText = " ButtCheeks is here to complete the Holy Trinity of crypto.\n First, there was $FART, a pioneer. Then came $butthole, pushing boundaries further.Butt, you don't get a fart without its buttcheeks! Built on cutting-edge blockchain technology, ButtCheeks represents the perfect fusion of humor and serious gains. Join the movement and become part of the most cheeky community in crypto.";
+  const fullText = " ButtCheeks is here to complete the Holy Trinity of crypto.\n First, there was $FART, a pioneer. Then came $butthole, pushing boundaries further. Butt, you don't get a fart without its buttcheeks! Built on cutting-edge blockchain technology, ButtCheeks represents the perfect fusion of humor and serious gains. Join the movement and become part of the most cheeky community in crypto, we're about to release something great.";
   const CONTRACT_ADDRESS = "DGjXz3xPKiBKr8sLtpDJmRgYXgMDEKtiKPzHzyuXpump";
   
   useEffect(() => {
@@ -24,12 +25,12 @@ const Index = () => {
     return text.split('ButtCheeks').map((part, index, array) => {
       if (index < array.length - 1) {
         return (
-          <>
+          <React.Fragment key={index}>
             {part.split('\n').map((line, i, arr) => (
-              <>
+              <React.Fragment key={i}>
                 {line}
                 {i < arr.length - 1 && <br />}
-              </>
+              </React.Fragment>
             ))}
             <a
               href={`https://dexscreener.com/solana/${CONTRACT_ADDRESS}`}
@@ -39,14 +40,14 @@ const Index = () => {
             >
               ButtCheeks
             </a>
-          </>
+          </React.Fragment>
         );
       }
       return part.split('\n').map((line, i, arr) => (
-        <>
+        <React.Fragment key={`${index}-${i}`}>
           {line}
           {i < arr.length - 1 && <br />}
-        </>
+        </React.Fragment>
       ));
     });
   };
@@ -58,6 +59,7 @@ const Index = () => {
           <div className="w-24 h-24 mx-auto bg-dark-accent rounded-full animate-float flex items-center justify-center">
             <span className="text-4xl">🍑</span>
           </div>
+          
           <h1 className="text-4xl sm:text-6xl font-bold flex items-center justify-center">
             <a
               href={`https://dexscreener.com/solana/${CONTRACT_ADDRESS}`}
@@ -75,6 +77,7 @@ const Index = () => {
               coin
             </span>
           </h1>
+
           <div className="relative">
             <p className="text-green-400 font-mono text-sm sm:text-base max-w-2xl mx-auto min-h-[8rem] sm:min-h-[6rem]">
               {renderTextWithLink(displayText)}
@@ -82,45 +85,45 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="flex justify-center items-center gap-8 pt-4">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8 pt-4">
             <a
               href="https://t.me/buttcheekscoinsol"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 text-white hover:text-dark-accent transition-colors text-xl animate-float"
-            >
-              <MessageCircle className="w-8 h-8" />
-              <span>Join Telegram</span>
-            </a>
-            
-            <div className="space-y-1 animate-float1">
-              <a
-                href={`https://dexscreener.com/solana/${CONTRACT_ADDRESS}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-dark-accent hover:bg-dark-accent/90 text-white font-bold py-4 px-8 rounded-lg text-xl transition-all duration-300 transform hover:scale-[1.02]"
+              className="flex items-center gap-3 text-white hover:text-dark-accent transition-colors text-lg sm:text-xl animate-float w-full sm:w-auto justify-center"
+            >
+              <MessageCircle className="w-6 sm:w-8 h-6 sm:h-8" />
+              <span>Join Telegram</span>
+            </a>
+
+            <div className="space-y-1 animate-float1 w-full sm:w-auto">
+              <a
+                href={`https://dexscreener.com/solana/${CONTRACT_ADDRESS}`}
+              target="_blank"
+              rel="noopener noreferrer"
+                className="inline-block bg-dark-accent hover:bg-dark-accent/90 text-white font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-lg text-lg sm:text-xl transition-all duration-300 transform hover:scale-[1.02] w-full sm:w-auto"
               >
                 Buy Now
               </a>
-              <div className="text-sm text-gray-500">(dexscreener)</div>
+              <div className="text-xs sm:text-sm text-gray-500">(dexscreener)</div>
             </div>
 
             <a
               href="https://x.com/buttcheekscoin"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 text-white hover:text-dark-accent transition-colors text-xl animate-float2"
+              className="flex items-center gap-3 text-white hover:text-dark-accent transition-colors text-lg sm:text-xl animate-float2 w-full sm:w-auto justify-center"
             >
-              <Twitter className="w-8 h-8" />
+              <Twitter className="w-6 sm:w-8 h-6 sm:h-8" />
               <span>Follow Twitter</span>
             </a>
-          </div>
+      </div>
 
           <div className="text-center animate-pulse">
             <div className="inline-block bg-gradient-to-r from-dark-accent/20 to-dark-accent/10 rounded-lg px-6 py-3">
               <span className="text-dark-accent font-bold">🏆 Coming Tomorrow:</span>
-              <span className="text-white ml-2">ButtCheeks Leaderboard - Who's Got The Cheekiest of them all?</span>
-            </div>
+              <span className="text-white ml-2">ButtCheeks Leaderboard - Who&apos;s Got The Cheekiest of them all?</span>
+    </div>
           </div>
 
           <div className="text-center">
