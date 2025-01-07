@@ -150,7 +150,7 @@ const Index = () => {
 
           <div className="text-center animate-pulse">
             <div className="inline-block bg-gradient-to-r from-dark-accent/20 to-dark-accent/10 rounded-lg px-6 py-3">
-              <span className="text-dark-accent font-bold">🏆 Coming Tomorrow:</span>
+              <span className="text-dark-accent font-bold">🏆 Alpha board: Release 11:59PM EST - 7TH January</span>
               <span className="text-white ml-2">ButtCheeks Leaderboard - Who&apos;s Got The Cheekiest of them all?</span>
             </div>
           </div>
