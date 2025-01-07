@@ -4,7 +4,7 @@ import { MessageCircle, Twitter } from "lucide-react";
 
 const Index = () => {
   const [displayText, setDisplayText] = useState("");
-  const fullText = "$buttcheeks completes the H🍩ly Trinity of crypto. \n Here to cover your buttholes and make your $farts roar, $buttcheeks is the most undervalued opportunity of the year (but not for long). \n\n We're working on a marketplace that lets you share your cheeks and win the finest audience. With {BILLION} of times the utility of $butthole, we're about to leave their butts behind and clap them.\n\n Join the movement, relax, and become part of the soon-to-be cheekiest community in crypto. Let's moon those $buttcheeks together — we're about to release greatness!";
+  const fullText = "$buttcheeks completes the H🍩ly Trinity of crypto. \n Here to cover your buttholes and make your $farts roar, $buttcheeks is the most undervalued opportunity of the year (but not for long). \n\n We're working on a marketplace that lets you share your cheeks and win the finest audience. With {BILLION} of times the utility of $butthole, we're about to leave their butts behind and start clapping.\n\n Join the movement, relax, and become part of the soon-to-be cheekiest community in crypto. Let's moon those $buttcheeks together — we're about to release greatness!";
   const CONTRACT_ADDRESS = "DGjXz3xPKiBKr8sLtpDJmRgYXgMDEKtiKPzHzyuXpump";
   
   useEffect(() => {
