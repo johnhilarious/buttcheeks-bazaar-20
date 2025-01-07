@@ -4,7 +4,7 @@ import { MessageCircle, Twitter } from "lucide-react";
 
 const Index = () => {
   const [displayText, setDisplayText] = useState("");
-  const fullText = "$buttcheeks completes the H🍩ly Trinity of crypto. \n Here to cover your buttholes and make your $farts roar, $buttcheeks is the most undervalued opportunity of the year (but not for long). \n\n We're working on a marketplace that lets you share your cheeks and win the finest audience. With 1e9x the utility of $butthole, we'll leave those butts behind, our cheeks have got it covered. \n\n Join the movement, relax, and become part of the soon-to-be cheekiest community in crypto. Let’s moon those $buttcheeks together — we’re about to release greatness!";
+  const fullText = "$buttcheeks completes the H🍩ly Trinity of crypto. \n Here to cover your buttholes and make your $farts roar, $buttcheeks is the most undervalued opportunity of the year (but not for long). \n\n We're working on a marketplace that lets you share your cheeks and win the finest audience. With {BILLION} times the utility of $butthole, we'll leave those butts behind, our cheeks have got it covered. \n\n Join the movement, relax, and become part of the soon-to-be cheekiest community in crypto. Let's moon those $buttcheeks together — we're about to release greatness!";
   const CONTRACT_ADDRESS = "DGjXz3xPKiBKr8sLtpDJmRgYXgMDEKtiKPzHzyuXpump";
   
   useEffect(() => {
@@ -52,6 +52,35 @@ const Index = () => {
     });
   };
 
+  const renderWavyBillion = () => {
+    return (
+      <span className="inline-flex">
+        {'billions'.split('').map((letter, i) => (
+          <span
+            key={i}
+            className="text-cyan-400 inline-block animate-wave"
+            style={{
+              animationDelay: `${i * 0.1}s`,
+              animationDuration: '2s'
+            }}
+          >
+            {letter}
+          </span>
+        ))}
+      </span>
+    );
+  };
+
+  const renderTextWithBillionAndLinks = (text: string) => {
+    const parts = text.split('{BILLION}');
+    return parts.map((part, index) => (
+      <React.Fragment key={index}>
+        {renderTextWithLink(part)}
+        {index < parts.length - 1 && renderWavyBillion()}
+      </React.Fragment>
+    ));
+  };
+
   return (
     <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 bg-black">
       <div className="max-w-7xl mx-auto space-y-12">
@@ -80,7 +109,7 @@ const Index = () => {
 
           <div className="relative">
             <p className="text-green-400 font-mono text-sm sm:text-base max-w-2xl mx-auto min-h-[8rem] sm:min-h-[6rem]">
-              {renderTextWithLink(displayText)}
+              {renderTextWithBillionAndLinks(displayText)}
               <span className="animate-pulse">_</span>
             </p>
           </div>
@@ -88,8 +117,8 @@ const Index = () => {
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8 pt-4">
             <a
               href="https://t.me/buttcheekscoinsol"
-                target="_blank"
-                rel="noopener noreferrer"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-3 text-white hover:text-dark-accent transition-colors text-lg sm:text-xl animate-float w-full sm:w-auto justify-center"
             >
               <MessageCircle className="w-6 sm:w-8 h-6 sm:h-8" />
@@ -99,8 +128,8 @@ const Index = () => {
             <div className="space-y-1 animate-float1 w-full sm:w-auto">
               <a
                 href={`https://dexscreener.com/solana/${CONTRACT_ADDRESS}`}
-              target="_blank"
-              rel="noopener noreferrer"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block bg-dark-accent hover:bg-dark-accent/90 text-white font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-lg text-lg sm:text-xl transition-all duration-300 transform hover:scale-[1.02] w-full sm:w-auto"
               >
                 Buy Now
@@ -117,13 +146,13 @@ const Index = () => {
               <Twitter className="w-6 sm:w-8 h-6 sm:h-8" />
               <span>Follow Twitter</span>
             </a>
-      </div>
+          </div>
 
           <div className="text-center animate-pulse">
             <div className="inline-block bg-gradient-to-r from-dark-accent/20 to-dark-accent/10 rounded-lg px-6 py-3">
               <span className="text-dark-accent font-bold">🏆 Coming Tomorrow:</span>
               <span className="text-white ml-2">ButtCheeks Leaderboard - Who&apos;s Got The Cheekiest of them all?</span>
-    </div>
+            </div>
           </div>
 
           <div className="text-center">

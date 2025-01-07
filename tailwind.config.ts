@@ -71,6 +71,16 @@ export default {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-10px)" },
         },
+        wave: {
+          "0%, 100%": { 
+            transform: "translateY(0)",
+            color: "rgb(34, 211, 238)"
+          },
+          "50%": { 
+            transform: "translateY(-4px)",
+            color: "rgb(6, 182, 212)"
+          }
+        },
         pulse: {
           "0%, 100%": { opacity: "1" },
           "50%": { opacity: "0.5" },
@@ -84,6 +94,7 @@ export default {
         float: "float 3s ease-in-out infinite",
         float1: "float1 4s ease-in-out infinite",
         float2: "float2 2s ease-in-out infinite",
+        wave: "wave 2s ease-in-out infinite",
         pulse: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
         shimmer: "shimmer 2s linear infinite",
       },
