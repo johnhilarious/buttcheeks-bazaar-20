@@ -43,19 +43,25 @@ const Index = () => {
   return (
     <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 bg-black">
       <div className="max-w-7xl mx-auto space-y-12">
-        {/* Hero Section */}
         <div className="text-center space-y-8">
           <div className="w-24 h-24 mx-auto bg-dark-accent rounded-full animate-float flex items-center justify-center">
             <span className="text-4xl">🍑</span>
           </div>
-          <h1 className="text-4xl sm:text-6xl font-bold flex items-center justify-center gap-3">
-            <img 
-              src="/buttcheeks.png" 
-              alt="ButtCheeks" 
-              className="h-12 sm:h-20"
-            />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-dark-accent">
-              Coin
+          <h1 className="text-4xl sm:text-6xl font-bold flex items-center justify-center">
+            <a
+              href={`https://dexscreener.com/solana/${CONTRACT_ADDRESS}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:opacity-80 transition-opacity"
+            >
+              <img 
+                src="/buttcheeks.png" 
+                alt="ButtCheeks" 
+                className="h-12 sm:h-20"
+              />
+            </a>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-dark-accent text-3xl sm:text-5xl -ml-[10px]">
+              coin
             </span>
           </h1>
           <div className="relative">
@@ -65,7 +71,6 @@ const Index = () => {
             </p>
           </div>
 
-          {/* Social Links and Buy Button Row */}
           <div className="flex justify-center items-center gap-8 pt-4">
             <a
               href="https://t.me/buttcheekscoinsol"
@@ -100,7 +105,6 @@ const Index = () => {
             </a>
           </div>
 
-          {/* Coming Soon Announcement */}
           <div className="text-center animate-pulse">
             <div className="inline-block bg-gradient-to-r from-dark-accent/20 to-dark-accent/10 rounded-lg px-6 py-3">
               <span className="text-dark-accent font-bold">🏆 Coming Tomorrow:</span>
@@ -108,7 +112,6 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Contract Address */}
           <div className="text-center">
             <p className="text-gray-400 text-sm">
               Contract Address: <span className="font-mono">{CONTRACT_ADDRESS}</span>
