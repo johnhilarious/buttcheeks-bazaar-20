@@ -31,10 +31,10 @@ const RoadmapContent = () => {
           items: [
             "Raydium  ✅",
             "Twitter verified ✅",
-            "contest participation ⌛",
-            "CoinMarketCap listing⌛",
+            "Contest participation ⌛",
+            "CoinMarketCap verification & listing ⌛",
+            "Birdeye verification",
             "CoinGecko listing",
-            "Birdeye verification"
           ]
         }
       ]
@@ -83,15 +83,15 @@ const RoadmapContent = () => {
             "CEX listing campaigns",
             "Major KOL partnerships",
             "Buttcheks NFT Collection",
-            "Viral marketing initiatives"
+            "Viral/Gorilla marketing initiatives"
           ]
         },
         {
           subtitle: "Advanced Marketing",
           items: [
+            "BlueCheckMark Twitter raids",
             "Professional PR campaigns",
             "Strategic billboard placements",
-            "BlueCheckMark Twitter raids",
             "Twitter wide meme contests"
           ]
         }
