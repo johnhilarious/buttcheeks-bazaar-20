@@ -102,27 +102,27 @@ const RoadmapContent = () => {
 
   return (
     <>
-           {phases.map((phase, index) => (
-        <div key={index} className="mb-6">
-          <h3 className="text-base font-bold text-dark-accent mb-2 flex items-center gap-2">
-            <span className="text-xs">{phase.icon}</span>
+      {phases.map((phase, index) => (
+        <div key={index} className="mb-8 last:mb-0">
+          <h3 className="text-lg font-bold text-dark-accent mb-3 flex items-center gap-2">
+            <span className="text-base">{phase.icon}</span>
             {phase.title}
           </h3>
           
           {phase.items && (
-            <ul className="space-y-1.5">
+            <ul className="space-y-2">
               {phase.items.map((item, i) => (
-                <li key={i} className="text-gray-300 text-sm">• {item}</li>
+                <li key={i} className="text-gray-300 text-sm leading-relaxed">• {item}</li>
               ))}
             </ul>
           )}
 
           {phase.sections && phase.sections.map((section, sIndex) => (
-            <div key={sIndex} className="mb-2">
-              <h4 className="text-sm text-dark-accent/80 mb-1">{section.subtitle}</h4>
-              <ul className="space-y-1.5 mb-3">
+            <div key={sIndex} className="mb-4 last:mb-0">
+              <h4 className="text-sm font-semibold text-dark-accent/80 mb-2">{section.subtitle}</h4>
+              <ul className="space-y-2">
                 {section.items.map((item, i) => (
-                  <li key={i} className="text-gray-300 text-sm">• {item}</li>
+                  <li key={i} className="text-gray-300 text-sm leading-relaxed">• {item}</li>
                 ))}
               </ul>
             </div>
@@ -215,17 +215,18 @@ const Index = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <div className="flex-grow py-12 px-4 sm:px-6 lg:px-8 bg-black relative">
-        <div className="hidden xl:block fixed left-8 top-12 w-[280px] max-h-[80vh] bg-black/50 backdrop-blur-sm rounded-xl border border-dark-accent/20">
-              <h2 className="text-xl font-bold text-dark-accent p-6 pb-4 text-center font-mono sticky top-0 bg-black/50 backdrop-blur-sm border-b border-dark-accent/20 z-10">
-                Marketing Roadmap
-              </h2>
-        <div className="p-6 pt-4 overflow-y-auto max-h-[calc(80vh-80px)] custom-scrollbar">
-          <RoadmapContent />
+        {/* Desktop Roadmap */}
+        <div className="hidden xl:block fixed left-8 top-12 w-[320px] max-h-[85vh] bg-black/50 backdrop-blur-sm rounded-xl border border-dark-accent/20">
+          <h2 className="text-xl font-bold text-dark-accent p-6 pb-4 text-center font-mono sticky top-0 bg-black/50 backdrop-blur-sm border-b border-dark-accent/20 z-10">
+            Marketing Roadmap
+          </h2>
+          <div className="p-6 pt-4 overflow-y-auto max-h-[calc(85vh-80px)] custom-scrollbar">
+            <RoadmapContent />
           </div>
         </div>
 
-        <div className="max-w-3xl mx-auto xl:ml-[340px] xl:mr-auto lg:max-w-2xl">
-        <div className="text-center space-y-8">
+        <div className="max-w-3xl mx-auto xl:ml-[380px] xl:mr-auto lg:max-w-2xl">
+          <div className="text-center space-y-8">
           <div className="w-24 h-24 mx-auto bg-dark-accent rounded-full animate-float flex items-center justify-center">
             <span className="text-4xl">🍑</span>
           </div>
@@ -289,18 +290,19 @@ const Index = () => {
             </a>
           </div>
 
+            {/* Mobile/Tablet Roadmap */}
             <div className="block xl:hidden mt-16 relative">
-            <div className="bg-black/50 backdrop-blur-sm rounded-xl border border-dark-accent/20">
-              <h2 className="text-xl font-bold text-dark-accent p-6 pb-4 text-center font-mono sticky top-0 bg-black/50 backdrop-blur-sm border-b border-dark-accent/20 z-10">
-                Marketing Roadmap
-              </h2>
-              <div className="p-6 pt-4 max-h-[60vh] overflow-y-auto custom-scrollbar">
-                <RoadmapContent />
+              <div className="bg-black/50 backdrop-blur-sm rounded-xl border border-dark-accent/20 max-w-2xl mx-auto">
+                <h2 className="text-xl font-bold text-dark-accent p-6 pb-4 text-center font-mono sticky top-0 bg-black/50 backdrop-blur-sm border-b border-dark-accent/20 z-10">
+                  Marketing Roadmap
+                </h2>
+                <div className="p-6 pt-4 max-h-[70vh] overflow-y-auto custom-scrollbar">
+                  <RoadmapContent />
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
       </div>
 
       <div className="w-full flex justify-end">
@@ -314,8 +316,8 @@ const Index = () => {
           >
             JohnHilarious
           </a>
-    </div>
-    </div>
+        </div>
+      </div>
     </div>
   );
 };
