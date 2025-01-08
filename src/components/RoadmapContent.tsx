@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 import React from "react";
->>>>>>> 54d436328539ba192438e87a905ceef805e6134e
 
 const RoadmapContent = () => {
   const phases = [
