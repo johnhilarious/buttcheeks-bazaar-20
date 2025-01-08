@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const RoadmapContent = () => {
   const phases = [
@@ -101,26 +101,26 @@ const RoadmapContent = () => {
   return (
     <>
       {phases.map((phase, index) => (
-        <div key={index} className="mb-10 last:mb-0">
-          <h3 className="text-xl font-bold text-dark-accent mb-4 flex items-center gap-2">
-            <span className="text-lg">{phase.icon}</span>
+        <div key={index} className="mb-8 last:mb-0">
+          <h3 className="text-lg font-bold text-dark-accent mb-3 flex items-center gap-2">
+            <span className="text-base">{phase.icon}</span>
             {phase.title}
           </h3>
           
           {phase.items && (
-            <ul className="space-y-3">
+            <ul className="space-y-2">
               {phase.items.map((item, i) => (
-                <li key={i} className="text-gray-300 text-base leading-relaxed pl-4">• {item}</li>
+                <li key={i} className="text-gray-300 text-sm leading-relaxed">• {item}</li>
               ))}
             </ul>
           )}
 
           {phase.sections && phase.sections.map((section, sIndex) => (
-            <div key={sIndex} className="mb-6 last:mb-0 mt-4">
-              <h4 className="text-base font-semibold text-dark-accent/80 mb-3">{section.subtitle}</h4>
-              <ul className="space-y-3">
+            <div key={sIndex} className="mb-4 last:mb-0">
+              <h4 className="text-sm font-semibold text-dark-accent/80 mb-2">{section.subtitle}</h4>
+              <ul className="space-y-2">
                 {section.items.map((item, i) => (
-                  <li key={i} className="text-gray-300 text-base leading-relaxed pl-4">• {item}</li>
+                  <li key={i} className="text-gray-300 text-sm leading-relaxed">• {item}</li>
                 ))}
               </ul>
             </div>
