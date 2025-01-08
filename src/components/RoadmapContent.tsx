@@ -10,6 +10,7 @@ const RoadmapContent = () => {
         "Basic website deployment ✅", 
         "Initial community building ✅",
         "Deploy on Solana & set up liquidity ✅",
+        "AntiBot Measures ⌛"
       ]
     },
     {
@@ -20,8 +21,8 @@ const RoadmapContent = () => {
           subtitle: "Community Building",
           items: [
             "Twitter raid coordination ✅",
-            "Regular Posting ✅",
-            "Daily SneakPeak ✅",
+            "Regular posting ✅",
+            "Daily dev sneakpeak ✅",
             "Peachy meme & stickers sharing ✅",
           ]
         },
@@ -30,8 +31,8 @@ const RoadmapContent = () => {
           items: [
             "Raydium  ✅",
             "Twitter verified ✅",
-            "Moderate Contest Participation",
-            "CoinMarketCap listing",
+            "contest participation ⌛",
+            "CoinMarketCap listing⌛",
             "CoinGecko listing",
             "Birdeye verification"
           ]
@@ -55,7 +56,7 @@ const RoadmapContent = () => {
         {
           subtitle: "Content Creator Program",
           items: [
-            "Small / Medium Kols",
+            "Small/Medium level Kols",
             "Partner with adult content creators",
             "Launch exclusive promotions",
             "Create content creator rewards"
@@ -64,7 +65,7 @@ const RoadmapContent = () => {
         {
           subtitle: "Community Events",
           items: [
-            "Voice/Video Chat on Telegram",
+            "Voice/Video chat on Telegram",
             "Weekly Twitter spaces",
             "Meme contests with major prizes",
             "Interactive community events"
@@ -81,7 +82,7 @@ const RoadmapContent = () => {
           items: [
             "CEX listing campaigns",
             "Major KOL partnerships",
-            "Press coverage push",
+            "Buttcheks NFT Collection",
             "Viral marketing initiatives"
           ]
         },
@@ -90,7 +91,7 @@ const RoadmapContent = () => {
           items: [
             "Professional PR campaigns",
             "Strategic billboard placements",
-            "BlueCheck Mark Twitter raids",
+            "BlueCheckMark Twitter raids",
             "Twitter wide meme contests"
           ]
         }
