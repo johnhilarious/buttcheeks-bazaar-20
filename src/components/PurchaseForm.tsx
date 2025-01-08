@@ -12,13 +12,13 @@ export const PurchaseForm = () => {
     e.preventDefault();
     toast({
       title: "Purchase Initiated",
-      description: `Purchasing ${amount} ButtCheeks tokens...`,
+      description: `Purchasing ${amount} Buttcheeks tokens...`,
     });
   };
 
   return (
     <Card className="glass p-6 w-full max-w-md">
-      <h3 className="text-xl font-bold mb-4 text-center">Buy ButtCheeks</h3>
+      <h3 className="text-xl font-bold mb-4 text-center">Buy Buttcheeks</h3>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label className="text-sm text-gray-400">Amount (USD)</label>

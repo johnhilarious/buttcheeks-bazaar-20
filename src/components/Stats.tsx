@@ -10,7 +10,7 @@ export const Stats = () => {
       value: "$420,690"
     },
     { 
-      label: "Buy ButtCheeks", 
+      label: "Buy Buttcheeks", 
       value: "View on Dexscreener",
       link: `https://dexscreener.com/solana/${CONTRACT_ADDRESS}`,
       icon: <ExternalLink className="w-4 h-4" />

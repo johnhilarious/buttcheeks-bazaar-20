@@ -1,4 +1,7 @@
+<<<<<<< HEAD
+=======
 import React from "react";
+>>>>>>> 54d436328539ba192438e87a905ceef805e6134e
 
 const RoadmapContent = () => {
   const phases = [
@@ -44,13 +47,12 @@ const RoadmapContent = () => {
       title: "Phase 3: Expansion",
       sections: [
         {
-          subtitle: "Enhanced Promotion",
+          subtitle: "Community Events",
           items: [
-            "Daily meme competitions", 
-            "Community rewards program",
-            "Targeted crypto ad campaigns",
-            "Coordinated trending campaigns",
-            "Solana ecosystem partnerships"
+            "Voice/Video chat on Telegram",
+            "Weekly Twitter spaces",
+            "Meme contests with major prizes",
+            "Interactive community events"
           ]
         },
         {
@@ -63,14 +65,15 @@ const RoadmapContent = () => {
           ]
         },
         {
-          subtitle: "Community Events",
+          subtitle: "Enhanced Promotion",
           items: [
-            "Voice/Video chat on Telegram",
-            "Weekly Twitter spaces",
-            "Meme contests with major prizes",
-            "Interactive community events"
+            "Daily meme competitions", 
+            "Community rewards program",
+            "Targeted crypto ad campaigns",
+            "Coordinated trending campaigns",
+            "Solana ecosystem partnerships"
           ]
-        }
+        },
       ]
     },
     {
@@ -89,7 +92,7 @@ const RoadmapContent = () => {
         {
           subtitle: "Advanced Marketing",
           items: [
-            "BlueCheckMark Twitter raids",
+            "BlueCheckMark Twitter raids ⌛",
             "Professional PR campaigns",
             "Strategic billboard placements",
             "Twitter wide meme contests"
