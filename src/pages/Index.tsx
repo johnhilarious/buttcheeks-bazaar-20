@@ -216,7 +216,7 @@ const Index = () => {
     <div className="min-h-screen flex flex-col">
       <div className="flex-grow py-12 px-4 sm:px-6 lg:px-8 bg-black relative">
         {/* Desktop Roadmap */}
-        <div className="hidden xl:block fixed left-8 top-12 w-[320px] max-h-[85vh] bg-black/50 backdrop-blur-sm rounded-xl border border-dark-accent/20">
+        <div className="hidden xl:block fixed left-8 top-12 w-[380px] max-h-[85vh] bg-black/50 backdrop-blur-sm rounded-xl border border-dark-accent/20">
           <h2 className="text-xl font-bold text-dark-accent p-6 pb-4 text-center font-mono sticky top-0 bg-black/50 backdrop-blur-sm border-b border-dark-accent/20 z-10">
             Marketing Roadmap
           </h2>
@@ -225,7 +225,7 @@ const Index = () => {
           </div>
         </div>
 
-        <div className="max-w-3xl mx-auto xl:ml-[380px] xl:mr-auto lg:max-w-2xl">
+        <div className="max-w-4xl mx-auto xl:ml-[420px] xl:mr-auto">
           <div className="text-center space-y-8">
           <div className="w-24 h-24 mx-auto bg-dark-accent rounded-full animate-float flex items-center justify-center">
             <span className="text-4xl">🍑</span>
@@ -292,11 +292,11 @@ const Index = () => {
 
             {/* Mobile/Tablet Roadmap */}
             <div className="block xl:hidden mt-16 relative">
-              <div className="bg-black/50 backdrop-blur-sm rounded-xl border border-dark-accent/20 max-w-2xl mx-auto">
+              <div className="bg-black/50 backdrop-blur-sm rounded-xl border border-dark-accent/20 max-w-3xl mx-auto">
                 <h2 className="text-xl font-bold text-dark-accent p-6 pb-4 text-center font-mono sticky top-0 bg-black/50 backdrop-blur-sm border-b border-dark-accent/20 z-10">
                   Marketing Roadmap
                 </h2>
-                <div className="p-6 pt-4 max-h-[70vh] overflow-y-auto custom-scrollbar">
+                <div className="p-8 pt-6 max-h-[70vh] overflow-y-auto custom-scrollbar">
                   <RoadmapContent />
                 </div>
               </div>
