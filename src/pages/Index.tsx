@@ -20,7 +20,7 @@ const structuredData = {
 const Index = () => {
   const [displayText, setDisplayText] = useState("");
   const fullText = "$buttcheeks completes the H🍩ly Trinity of Crypto.\nHere to cover your $butthole and make your $farts roar, $buttcheeks is the cheekiest opportunity of your life time.\nJoin the movement, relax, and let's moon those $buttcheeks together! PS: We're also working on a marketplace that lets you share your cheeks and win the finest audience, that's a {BILLION} of times the utility of $butthole. We're about to leave their asses to ashes and start clapping!";
-  const CONTRACT_ADDRESS = "DGjXz3xPKiBKr8sLtpDJmRgYXgMDEKtiKPzHzyuXpump";
+  const CONTRACT_ADDRESS = "BpComQ8aVVc9iQJKR6Lu77CTw4jGY7x2ZibFWJsapump";
   
   useEffect(() => {
     let currentIndex = 0;
